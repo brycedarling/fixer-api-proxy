@@ -13,7 +13,7 @@ go build
 Run server:
 
 ```
-./fetcher-api-proxy
+./fixer-api-proxy
 ```
 
 Request exchange rates:
@@ -30,7 +30,7 @@ The query params for the `/exchange-rate` endpoint are:
 - `other` - other currency for conversion rates
 
 
-The `/exchange-rate` endpoint will request the Fetcher API for every date in that period and return all of the exchange rates between the two given currencies:
+The `/exchange-rate` endpoint will request the Fixer API for every date in that period and return all of the exchange rates between the two given currencies:
 
 ```
 {"2013-12-23":0.837729,"2013-12-24":0.835788,"2013-12-25":0.836701,"2013-12-26":0.834049}
