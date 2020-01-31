@@ -45,3 +45,7 @@ go test
 ```
 
 However, due to time constraints there is only one test for the API using a fake period fetcher.
+
+---
+
+*Oops*, while doing the 2nd part of the challenge, I noticed that the Fixer API has an `Time-Series Endpoint` instead of the `Historical Rates Endpoint` that I used. This would've saved me from having to make N API requests.
