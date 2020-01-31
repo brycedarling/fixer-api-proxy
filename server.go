@@ -4,6 +4,8 @@ import (
 	"encoding/json"
 	"io"
 	"net/http"
+
+	fixer "github.com/brycedarling/fixer-api-proxy/pkg"
 )
 
 type Server interface {
@@ -11,10 +13,10 @@ type Server interface {
 }
 
 type server struct {
-	periodFetcher PeriodFetcher
+	periodFetcher fixer.PeriodFetcher
 }
 
-func NewServer(pf PeriodFetcher) Server {
+func NewServer(pf fixer.PeriodFetcher) Server {
 	return &server{pf}
 }
 

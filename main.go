@@ -5,20 +5,21 @@ import (
 	"net/http"
 	"time"
 
+	fixer "github.com/brycedarling/fixer-api-proxy/pkg"
 	"github.com/patrickmn/go-cache"
 )
 
 func main() {
-	rf, err := NewRateFetcher()
+	rf, err := fixer.NewRateFetcher()
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	c := cache.New(5*time.Minute, 10*time.Minute)
 
-	crf := NewCachedRateFetcher(rf, c)
+	crf := fixer.NewCachedRateFetcher(rf, c)
 
-	pf := NewPeriodFetcher(crf)
+	pf := fixer.NewPeriodFetcher(crf)
 
 	s := NewServer(pf)
 
