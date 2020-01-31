@@ -38,7 +38,6 @@ type exchangeRateResponse struct {
 
 func (f rateFetcher) FetchExchangeRate(date, base, other string) (float64, error) {
 	url := fmt.Sprintf("http://data.fixer.io/api/%s?access_key=%s&base=%s&other=%s", date, f.APIKey, base, other)
-	fmt.Println(url)
 
 	res, err := http.Get(url)
 	if err != nil {
